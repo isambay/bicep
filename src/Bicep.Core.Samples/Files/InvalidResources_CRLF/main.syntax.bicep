@@ -407,20 +407,20 @@ resource bar 'Microsoft.Foo/foos@2020-02-02-alpha' = {
 //@[7:8)       LeftSquare |[|
 //@[8:10)       NewLine |\r\n|
       a
-//@[6:9)       ArrayItemSyntax
+//@[6:7)       ArrayItemSyntax
 //@[6:7)        VariableAccessSyntax
 //@[6:7)         IdentifierSyntax
 //@[6:7)          Identifier |a|
-//@[7:9)        NewLine |\r\n|
+//@[7:9)       NewLine |\r\n|
       !null
-//@[6:13)       ArrayItemSyntax
+//@[6:11)       ArrayItemSyntax
 //@[6:11)        UnaryOperationSyntax
 //@[6:7)         Exclamation |!|
 //@[7:11)         NullLiteralSyntax
 //@[7:11)          NullKeyword |null|
-//@[11:13)        NewLine |\r\n|
+//@[11:13)       NewLine |\r\n|
       true && true || true + -true * 4
-//@[6:40)       ArrayItemSyntax
+//@[6:38)       ArrayItemSyntax
 //@[6:38)        BinaryOperationSyntax
 //@[6:18)         BinaryOperationSyntax
 //@[6:10)          BooleanLiteralSyntax
@@ -441,7 +441,7 @@ resource bar 'Microsoft.Foo/foos@2020-02-02-alpha' = {
 //@[35:36)           Asterisk |*|
 //@[37:38)           NumericLiteralSyntax
 //@[37:38)            Number |4|
-//@[38:40)        NewLine |\r\n|
+//@[38:40)       NewLine |\r\n|
     ]
 //@[4:5)       RightSquare |]|
 //@[5:7)     NewLine |\r\n|
@@ -581,7 +581,7 @@ resource badDepends 'Microsoft.Foo/foos@2020-02-02-alpha' = {
 //@[13:14)     LeftSquare |[|
 //@[14:16)     NewLine |\r\n|
     baz.id
-//@[4:12)     ArrayItemSyntax
+//@[4:10)     ArrayItemSyntax
 //@[4:10)      PropertyAccessSyntax
 //@[4:7)       VariableAccessSyntax
 //@[4:7)        IdentifierSyntax
@@ -589,7 +589,7 @@ resource badDepends 'Microsoft.Foo/foos@2020-02-02-alpha' = {
 //@[7:8)       Dot |.|
 //@[8:10)       IdentifierSyntax
 //@[8:10)        Identifier |id|
-//@[10:12)      NewLine |\r\n|
+//@[10:12)     NewLine |\r\n|
   ]
 //@[2:3)     RightSquare |]|
 //@[3:5)   NewLine |\r\n|
@@ -625,15 +625,15 @@ resource badDepends2 'Microsoft.Foo/foos@2020-02-02-alpha' = {
 //@[13:14)     LeftSquare |[|
 //@[14:16)     NewLine |\r\n|
     'hello'
-//@[4:13)     ArrayItemSyntax
+//@[4:11)     ArrayItemSyntax
 //@[4:11)      StringSyntax
 //@[4:11)       StringComplete |'hello'|
-//@[11:13)      NewLine |\r\n|
+//@[11:13)     NewLine |\r\n|
     true
-//@[4:10)     ArrayItemSyntax
+//@[4:8)     ArrayItemSyntax
 //@[4:8)      BooleanLiteralSyntax
 //@[4:8)       TrueKeyword |true|
-//@[8:10)      NewLine |\r\n|
+//@[8:10)     NewLine |\r\n|
   ]
 //@[2:3)     RightSquare |]|
 //@[3:5)   NewLine |\r\n|
@@ -692,11 +692,11 @@ resource badDepends4 'Microsoft.Foo/foos@2020-02-02-alpha' = {
 //@[13:14)     LeftSquare |[|
 //@[14:16)     NewLine |\r\n|
     badDepends3
-//@[4:17)     ArrayItemSyntax
+//@[4:15)     ArrayItemSyntax
 //@[4:15)      VariableAccessSyntax
 //@[4:15)       IdentifierSyntax
 //@[4:15)        Identifier |badDepends3|
-//@[15:17)      NewLine |\r\n|
+//@[15:17)     NewLine |\r\n|
   ]
 //@[2:3)     RightSquare |]|
 //@[3:5)   NewLine |\r\n|
@@ -889,7 +889,7 @@ resource unfinishedVnet 'Microsoft.Network/virtualNetworks@2020-06-01' = {
 //@[13:14)       LeftSquare |[|
 //@[14:16)       NewLine |\r\n|
       {
-//@[6:311)       ArrayItemSyntax
+//@[6:309)       ArrayItemSyntax
 //@[6:309)        ObjectSyntax
 //@[6:7)         LeftBrace |{|
 //@[7:9)         NewLine |\r\n|
@@ -912,7 +912,7 @@ resource unfinishedVnet 'Microsoft.Network/virtualNetworks@2020-06-01' = {
 //@[23:24)             LeftSquare |[|
 //@[24:26)             NewLine |\r\n|
             {
-//@[12:140)             ArrayItemSyntax
+//@[12:138)             ArrayItemSyntax
 //@[12:138)              ObjectSyntax
 //@[12:13)               LeftBrace |{|
 //@[13:15)               NewLine |\r\n|
@@ -922,7 +922,7 @@ resource unfinishedVnet 'Microsoft.Network/virtualNetworks@2020-06-01' = {
 //@[14:16)               NewLine |\r\n|
             }
 //@[12:13)               RightBrace |}|
-//@[13:15)              NewLine |\r\n|
+//@[13:15)             NewLine |\r\n|
           ]
 //@[10:11)             RightSquare |]|
 //@[11:13)           NewLine |\r\n|
@@ -931,7 +931,7 @@ resource unfinishedVnet 'Microsoft.Network/virtualNetworks@2020-06-01' = {
 //@[9:11)         NewLine |\r\n|
       }
 //@[6:7)         RightBrace |}|
-//@[7:9)        NewLine |\r\n|
+//@[7:9)       NewLine |\r\n|
     ]
 //@[4:5)       RightSquare |]|
 //@[5:7)     NewLine |\r\n|

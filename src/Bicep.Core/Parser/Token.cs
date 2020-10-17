@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
+using System.Linq;
 using Bicep.Core.Syntax;
 
 namespace Bicep.Core.Parser
@@ -30,5 +31,9 @@ namespace Bicep.Core.Parser
         public ImmutableArray<SyntaxTrivia> LeadingTrivia { get; }
 
         public ImmutableArray<SyntaxTrivia> TrailingTrivia { get; }
+
+        public TextSpan SpanWithTrivia => TextSpan.Between(
+            LeadingTrivia.Any() ? LeadingTrivia.First().Span : Span,
+            TrailingTrivia.Any() ? TrailingTrivia.Last().Span : Span);
     }
 }
